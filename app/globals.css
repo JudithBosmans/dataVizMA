@@ -5,17 +5,17 @@
    Swap --accent for a different mood; everything else keys off these.
    ======================================================================== */
 :root {
-    --background: #fcf9f5; /* warm off-white */
-    --surface: #fbf8f2;
-    --foreground: #231f1a; /* soft near-black */
-    --muted: #8c8373; /* warm grey text */
+    --background: #14110d; /* warm near-black */
+    --surface: #211d17; /* raised panels, tooltips, hover */
+    --foreground: #ece6dc; /* warm off-white text */
+    --muted: #938a7c; /* muted warm grey text */
 
-    --accent: #d084c6; /* sunrise terracotta */
-    --accent-soft: #f4c9a9;
+    --accent: #d084c6; /* soft orchid */
+    --accent-soft: #e9b9e2;
 
-    --dot: #c7bfb1; /* neutral resting dot */
-    --dot-faded: #d7d0c3; /* non-matching dot while a tag is active */
-    --line: #c0b6a4; /* constellation line */
+    --dot: #7b7264; /* neutral resting dot (visible on dark) */
+    --dot-faded: #4a443b; /* non-matching dot while a tag is active */
+    --line: #4a443b; /* constellation line */
 
     --space: 1rem;
     --radius: 0.9rem;
@@ -97,7 +97,12 @@ body {
 .tag-list {
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.4rem;
+    width: 90%;
+
+    @media (min-width: 1200px) {
+        max-width: 17rem;
+    }
 }
 
 .tag-list__tag {
@@ -106,27 +111,30 @@ body {
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    padding: 0.55rem 0.75rem;
-    border: 0;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--foreground) 32%, transparent);
     border-radius: 0.6rem;
     background: transparent;
     color: var(--foreground);
     font: inherit;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: left;
     cursor: pointer;
     transition:
         background-color 0.25s ease,
+        border-color 0.25s ease,
         color 0.25s ease;
 }
 
 .tag-list__tag:hover {
+    border-color: color-mix(in srgb, var(--foreground) 45%, transparent);
     background: var(--surface);
 }
 
 .tag-list__tag--active,
 .tag-list__tag--active:hover {
     background: var(--accent);
+    border-color: var(--accent);
     color: var(--surface);
 }
 

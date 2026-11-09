@@ -48,74 +48,74 @@ export const shapes: Record<string, Shape> = {
             { x: 0.80, y: 0.56, s: K }, // 10 handle far
             { x: 0.74, y: 0.64, s: C }, // 11 handle out bottom
             { x: 0.62, y: 0.63, s: M }, // 12 handle bottom
-            { x: 0.37, y: 0.24, s: C }, // 13 steam left
-            { x: 0.45, y: 0.17, s: M }, // 14 steam mid
-            { x: 0.53, y: 0.24, s: C }, // 15 steam right
+            { x: 0.45, y: 0.30, s: C }, // 13 steam (just above rim)
+            { x: 0.47, y: 0.22, s: M }, // 14 steam (mid)
+            { x: 0.44, y: 0.14, s: C }, // 15 steam (top)
         ],
         lines: [
             [0, 4], [4, 1], [1, 7], [7, 2], [2, 6], [6, 3], [3, 5], [5, 0], // cup
             [1, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 2], // handle
-            [13, 14], [14, 15], // steam
+            [4, 13], [13, 14], [14, 15], // steam rising vertically from the cup
         ],
     },
 
     // -----------------------------------------------------------------------
-    // NEEDS CALM — crescent moon with a few scattered stars
+    // NEEDS CALM — one full crescent moon (all 16 dots form the moon)
     // -----------------------------------------------------------------------
     "Needs calm": {
         points: [
-            { x: 0.50, y: 0.18, s: K }, // 0  moon top
-            { x: 0.63, y: 0.22, s: C }, // 1
-            { x: 0.72, y: 0.33, s: M }, // 2
-            { x: 0.76, y: 0.47, s: C }, // 3
-            { x: 0.74, y: 0.60, s: M }, // 4
-            { x: 0.66, y: 0.72, s: C }, // 5
-            { x: 0.52, y: 0.80, s: K }, // 6  moon bottom
-            { x: 0.58, y: 0.70, s: C }, // 7  inner curve
-            { x: 0.63, y: 0.58, s: M }, // 8
-            { x: 0.64, y: 0.47, s: K }, // 9  inner belly
-            { x: 0.62, y: 0.36, s: M }, // 10
-            { x: 0.56, y: 0.27, s: C }, // 11
-            { x: 0.30, y: 0.30, s: M }, // 12 star
-            { x: 0.24, y: 0.55, s: C }, // 13 star
-            { x: 0.35, y: 0.72, s: C }, // 14 star
-            { x: 0.33, y: 0.45, s: C }, // 15 star
+            { x: 0.50, y: 0.17, s: K }, // 0  moon top
+            { x: 0.62, y: 0.20, s: C }, // 1  outer edge
+            { x: 0.71, y: 0.27, s: M }, // 2  outer edge
+            { x: 0.78, y: 0.37, s: M }, // 3  outer edge
+            { x: 0.80, y: 0.49, s: C }, // 4  outer edge
+            { x: 0.76, y: 0.61, s: M }, // 5  outer edge
+            { x: 0.68, y: 0.71, s: C }, // 6  outer edge
+            { x: 0.59, y: 0.785, s: M }, // 7  outer edge
+            { x: 0.50, y: 0.81, s: K }, // 8  moon bottom
+            { x: 0.57, y: 0.71, s: C }, // 9  inner edge
+            { x: 0.635, y: 0.60, s: M }, // 10 inner edge
+            { x: 0.655, y: 0.48, s: K }, // 11 inner belly
+            { x: 0.645, y: 0.37, s: C }, // 12 inner edge
+            { x: 0.60, y: 0.28, s: M }, // 13 inner edge
+            { x: 0.555, y: 0.225, s: C }, // 14 inner edge
+            { x: 0.52, y: 0.19, s: C }, // 15 inner edge (back to top)
         ],
         lines: [
-            [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], // outer edge
-            [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 0], // inner edge
-            [12, 15], [15, 13], [13, 14], // stars linked into a small constellation
+            // outer edge, top → bottom
+            [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8],
+            // inner edge, bottom → top (closes the crescent)
+            [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 0],
         ],
     },
 
     // -----------------------------------------------------------------------
-    // MUSIC & PODCASTS — eighth note (note head + stem + flags)
+    // MUSIC & PODCASTS — eighth note: oval head + stem + ONE flag
+    // (head is a clean 8-point loop; single tail only)
     // -----------------------------------------------------------------------
     "Music & podcasts": {
         points: [
-            { x: 0.30, y: 0.72, s: K }, // 0  head left
-            { x: 0.40, y: 0.66, s: M }, // 1  head top
-            { x: 0.47, y: 0.72, s: M }, // 2  head right
-            { x: 0.37, y: 0.78, s: C }, // 3  head bottom
-            { x: 0.47, y: 0.64, s: M }, // 4  stem low
-            { x: 0.48, y: 0.50, s: C }, // 5  stem mid
-            { x: 0.49, y: 0.34, s: K }, // 6  stem top
-            { x: 0.49, y: 0.30, s: M }, // 7  flag root
-            { x: 0.62, y: 0.38, s: K }, // 8  flag 1 tip
-            { x: 0.60, y: 0.47, s: C }, // 9  flag 1 curve
-            { x: 0.52, y: 0.50, s: M }, // 10 flag 1 base
-            { x: 0.61, y: 0.52, s: C }, // 11 flag 2 tip
-            { x: 0.53, y: 0.60, s: C }, // 12 flag 2 base
-            { x: 0.33, y: 0.69, s: C }, // 13 head inner
-            { x: 0.43, y: 0.75, s: C }, // 14 head inner
-            { x: 0.385, y: 0.72, s: C }, // 15 head centre
+            { x: 0.295, y: 0.72, s: K }, // 0  head left
+            { x: 0.32, y: 0.665, s: C }, // 1  head
+            { x: 0.385, y: 0.65, s: M }, // 2  head top
+            { x: 0.45, y: 0.665, s: C }, // 3  head
+            { x: 0.475, y: 0.72, s: M }, // 4  head right
+            { x: 0.45, y: 0.775, s: C }, // 5  head
+            { x: 0.385, y: 0.79, s: C }, // 6  head bottom
+            { x: 0.32, y: 0.775, s: C }, // 7  head
+            { x: 0.475, y: 0.62, s: M }, // 8  stem low
+            { x: 0.485, y: 0.47, s: C }, // 9  stem mid
+            { x: 0.49, y: 0.32, s: K }, // 10 stem top
+            { x: 0.56, y: 0.31, s: M }, // 11 flag
+            { x: 0.61, y: 0.38, s: K }, // 12 flag tip
+            { x: 0.60, y: 0.46, s: M }, // 13 flag
+            { x: 0.55, y: 0.50, s: C }, // 14 flag
+            { x: 0.50, y: 0.50, s: C }, // 15 flag end
         ],
         lines: [
-            [0, 1], [1, 2], [2, 3], [3, 0], // note head
-            [2, 4], [4, 5], [5, 6], // stem
-            [6, 7], [7, 8], [8, 9], [9, 10], // flag 1
-            [8, 11], [11, 12], // flag 2
-            [1, 15], [15, 13], [15, 14], // head centre + inner detail
+            [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0], // head (clean oval)
+            [4, 8], [8, 9], [9, 10], // stem
+            [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], // single flag
         ],
     },
 
@@ -145,35 +145,6 @@ export const shapes: Record<string, Shape> = {
             [0, 1], [1, 2], // arm
             [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 2], // rose
             [8, 9], [10, 11], [11, 12], [13, 14], [14, 15], // drops
-        ],
-    },
-
-    // -----------------------------------------------------------------------
-    // GETTING READY — hand mirror (ring + handle)
-    // -----------------------------------------------------------------------
-    "Getting ready": {
-        points: [
-            { x: 0.46, y: 0.21, s: K }, // 0  ring top
-            { x: 0.554, y: 0.241, s: C }, // 1
-            { x: 0.612, y: 0.321, s: K }, // 2  ring right
-            { x: 0.612, y: 0.419, s: C }, // 3
-            { x: 0.554, y: 0.499, s: C }, // 4
-            { x: 0.46, y: 0.53, s: M }, // 5  ring bottom
-            { x: 0.366, y: 0.499, s: C }, // 6
-            { x: 0.308, y: 0.419, s: K }, // 7  ring left
-            { x: 0.308, y: 0.321, s: C }, // 8
-            { x: 0.366, y: 0.241, s: C }, // 9
-            { x: 0.46, y: 0.60, s: M }, // 10 handle top
-            { x: 0.44, y: 0.72, s: M }, // 11 handle mid
-            { x: 0.48, y: 0.84, s: K }, // 12 handle end
-            { x: 0.42, y: 0.37, s: C }, // 13 glass glint
-            { x: 0.50, y: 0.40, s: C }, // 14 glass glint
-            { x: 0.45, y: 0.78, s: C }, // 15 handle inner
-        ],
-        lines: [
-            [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 0], // ring
-            [5, 10], [10, 11], [11, 15], [15, 12], // handle (through inner point 15)
-            [13, 14], [14, 2], // glass glints linked to the ring
         ],
     },
 
